@@ -1,8 +1,8 @@
 const User = require("../Model/useModel");
+
 const getData = async (req, res, next) => {
   try {
     const data = await User.find();
-    console.log("Gwtting the data:", data)
     res.status(200).json({ sucess: true, data: data });
   } catch (err) {
     res.status(400).json({ sucess: false, msg: "Show all datas" });
@@ -45,7 +45,7 @@ const updateData = async (req, res) => {
 const getDataById = async (req, res) => {
     try {
         const data = await User.findById(req.params.id);
-        console.log("Gwtting the data:", data)
+        console.log("Getting the data:", data)
         res.status(200).json({ sucess: true, data: data });
       } catch (err) {
         res.status(400).json({ sucess: false, msg: "Show all datas" });
